@@ -1,4 +1,7 @@
 # UV Sunscreen Advisor
+### Created By:-
+## Biprajit Paul
+### LinkedIn : www.linkedin.com/in/biprajitpaul
 
 A web application that uses the OpenUV API to provide users with information about the current UV index at their location and recommend whether they need to apply sunscreen.
 
@@ -65,11 +68,7 @@ Before you begin, ensure you have met the following requirements:
 - **GET /**: Displays the home page with the location input form
 - **POST /check-uv**: Processes the form submission, calls the OpenUV API, and displays results
 
-## Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 - [OpenUV API](https://www.openuv.io) for providing UV index data
