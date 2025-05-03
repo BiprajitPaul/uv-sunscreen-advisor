@@ -1,0 +1,22 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun -->
+  <circle cx="50" cy="50" r="25" fill="#FFCC00" />
+  
+  <!-- Sun rays -->
+  <g fill="#FF9900">
+    <path d="M50,15 L50,5 A2,2 0 0,1 54,5 L54,15 A2,2 0 0,1 50,15 Z" />
+    <path d="M50,85 L50,95 A2,2 0 0,0 54,95 L54,85 A2,2 0 0,0 50,85 Z" />
+    <path d="M15,50 L5,50 A2,2 0 0,1 5,46 L15,46 A2,2 0 0,1 15,50 Z" />
+    <path d="M85,50 L95,50 A2,2 0 0,0 95,46 L85,46 A2,2 0 0,0 85,50 Z" />
+    <path d="M25,25 L18,18 A2,2 0 0,1 21,15 L28,22 A2,2 0 0,1 25,25 Z" />
+    <path d="M75,75 L82,82 A2,2 0 0,0 85,79 L78,72 A2,2 0 0,0 75,75 Z" />
+    <path d="M25,75 L18,82 A2,2 0 0,0 21,85 L28,78 A2,2 0 0,0 25,75 Z" />
+    <path d="M75,25 L82,18 A2,2 0 0,0 79,15 L72,22 A2,2 0 0,0 75,25 Z" />
+  </g>
+  
+  <!-- UV text -->
+  <text x="50" y="55" text-anchor="middle" fill="#2C3E50" font-family="Arial" font-size="20" font-weight="bold">UV</text>
+  
+  <!-- Sunscreen protection semi-circle -->
+  <path d="M25,50 A25,25 0 0,0 75,50" stroke="#3498DB" stroke-width="5" fill="none" />
+</svg>

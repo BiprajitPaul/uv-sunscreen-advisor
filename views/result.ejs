@@ -1,0 +1,79 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="result-content">
+    <h1 class="title">Your UV Report</h1>
+    
+    <div class="result-card <%= recommendation.colorClass %>">
+      <div class="result-header">
+        <h2>Current UV Index: <span class="uv-value"><%= uvData.uv.toFixed(1) %></span></h2>
+        <div class="risk-level"><%= recommendation.risk %> Risk</div>
+      </div>
+      
+      <div class="recommendation">
+        <div class="recommendation-icon">
+          <% if (recommendation.needSunscreen) { %>
+            <img src="/images/sunscreen_needed_svg.jpg" alt="Sunscreen recommended" class="icon">
+          <% } else { %>
+            <img src="/images/no_sunscreen_svg.jpg" alt="No sunscreen needed" class="icon">
+          <% } %>
+        </div>
+        
+        <div class="recommendation-text">
+          <h3><%= recommendation.needSunscreen ? 'Sunscreen Recommended' : 'No Sunscreen Needed' %></h3>
+          <p><%= recommendation.message %></p>
+          <% if (recommendation.needSunscreen) { %>
+            <p class="spf-recommendation">Recommended protection: <%= recommendation.spf %></p>
+          <% } %>
+        </div>
+      </div>
+      
+      <div class="uv-details">
+        <div class="detail-item">
+          <span class="detail-label">Max UV Today:</span>
+          <span class="detail-value"><%= uvData.uv_max.toFixed(1) %></span>
+          <span class="detail-time">at <%= new Date(uvData.uv_max_time).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}) %></span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Safe Exposure Time:</span>
+          <span class="detail-value"><%= Math.round(uvData.safe_exposure_time.st1) %> minutes</span>
+          <span class="detail-info">(for sensitive skin)</span>
+        </div>
+        
+        <div class="detail-item">
+          <span class="detail-label">Ozone:</span>
+          <span class="detail-value"><%= uvData.ozone.toFixed(1) %> DU</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="protection-tips">
+      <h3>Sun Protection Tips</h3>
+      <ul>
+        <% if (recommendation.needSunscreen) { %>
+          <li>Apply <%= recommendation.spf %> sunscreen at least 15 minutes before going outside</li>
+          <li>Reapply sunscreen every 2 hours, or after swimming or sweating</li>
+          <li>Wear a wide-brimmed hat and sunglasses with UV protection</li>
+          <% if (uvData.uv > 7) { %>
+            <li>Seek shade during midday hours (10am-4pm)</li>
+            <li>Wear protective clothing that covers arms and legs</li>
+          <% } %>
+        <% } else { %>
+          <li>Low UV levels, but sun protection may still be needed for extended outdoor activities</li>
+          <li>People with sensitive skin should still take precautions</li>
+        <% } %>
+      </ul>
+    </div>
+    
+    <div class="actions">
+      <a href="/" class="btn-primary">Check Another Location</a>
+    </div>
+    
+    <div class="disclaimer">
+      <p>Data provided by <a href="https://www.openuv.io/" target="_blank">OpenUV API</a>. This tool provides general guidance. Individual sun sensitivity varies.</p>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

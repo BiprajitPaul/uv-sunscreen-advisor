@@ -1,0 +1,89 @@
+<%- include('partials/header') %>
+
+<div class="container">
+  <div class="home-content">
+    <h1 class="title">UV Sunscreen Advisor</h1>
+    <p class="subtitle">Find out if you need sunscreen today based on the current UV index at your location</p>
+    
+    <% if (locals.error) { %>
+      <div class="error-alert">
+        <p><%= error %></p>
+      </div>
+    <% } %>
+    
+    <div class="form-container">
+      <form action="/check-uv" method="POST" id="location-form">
+        <div class="form-group">
+          <label for="lat">Latitude:</label>
+          <input type="text" id="lat" name="lat" placeholder="e.g., 40.7128" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="lng">Longitude:</label>
+          <input type="text" id="lng" name="lng" placeholder="e.g., -74.0060" required>
+        </div>
+        
+        <div class="buttons">
+          <button type="button" id="get-location" class="btn-secondary">Use My Location</button>
+          <button type="submit" class="btn-primary">Check UV Index</button>
+        </div>
+      </form>
+      
+      <div class="location-info">
+        <p>Not sure of your coordinates?</p>
+        <p>Click "Use My Location" button or <a href="https://www.latlong.net/" target="_blank">find your coordinates here</a>.</p>
+      </div>
+    </div>
+    
+    <div class="info-section">
+      <h2>Why UV Protection Matters</h2>
+      <p>UV radiation from the sun can cause sunburn, skin aging, and increase the risk of skin cancer. Checking the UV index helps you take appropriate precautions to protect your skin.</p>
+      
+      <div class="uv-scale">
+        <h3>UV Index Scale</h3>
+        <div class="scale-items">
+          <div class="scale-item low">
+            <span class="index">0-2</span>
+            <span class="label">Low</span>
+          </div>
+          <div class="scale-item moderate">
+            <span class="index">3-5</span>
+            <span class="label">Moderate</span>
+          </div>
+          <div class="scale-item high">
+            <span class="index">6-7</span>
+            <span class="label">High</span>
+          </div>
+          <div class="scale-item very-high">
+            <span class="index">8-10</span>
+            <span class="label">Very High</span>
+          </div>
+          <div class="scale-item extreme">
+            <span class="index">11+</span>
+            <span class="label">Extreme</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('get-location').addEventListener('click', function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        function(position) {
+          document.getElementById('lat').value = position.coords.latitude.toFixed(4);
+          document.getElementById('lng').value = position.coords.longitude.toFixed(4);
+        },
+        function(error) {
+          alert('Error getting location: ' + error.message);
+        }
+      );
+    } else {
+      alert('Geolocation is not supported by your browser');
+    }
+  });
+</script>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Sun rays -->
+  <g fill="#FF9900">
+    <path d="M100,40 L100,15 A5,5 0 0,1 110,15 L110,40 A5,5 0 0,1 100,40 Z" />
+    <path d="M100,160 L100,185 A5,5 0 0,0 110,185 L110,160 A5,5 0 0,0 100,160 Z" />
+    <path d="M40,100 L15,100 A5,5 0 0,1 15,90 L40,90 A5,5 0 0,1 40,100 Z" />
+    <path d="M160,100 L185,100 A5,5 0 0,0 185,90 L160,90 A5,5 0 0,0 160,100 Z" />
+    <path d="M57,57 L39,39 A5,5 0 0,1 46,32 L64,50 A5,5 0 0,1 57,57 Z" />
+    <path d="M143,143 L161,161 A5,5 0 0,0 168,154 L150,136 A5,5 0 0,0 143,143 Z" />
+    <path d="M57,143 L39,161 A5,5 0 0,0 46,168 L64,150 A5,5 0 0,0 57,143 Z" />
+    <path d="M143,57 L161,39 A5,5 0 0,0 154,32 L136,50 A5,5 0 0,0 143,57 Z" />
+  </g>
+  
+  <!-- Sun circle -->
+  <circle cx="100" cy="100" r="40" fill="#FFCC00" />
+  
+  <!-- Sunscreen bottle -->
+  <g transform="translate(80, 70)">
+    <rect x="0" y="20" width="30" height="50" rx="5" ry="5" fill="#3498db" />
+    <rect x="5" y="0" width="20" height="25" rx="3" ry="3" fill="#2980b9" />
+    <text x="15" y="50" text-anchor="middle" fill="white" font-family="Arial" font-size="12" font-weight="bold">SPF</text>
+  </g>
+</svg>
