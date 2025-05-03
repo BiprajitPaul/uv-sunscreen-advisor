@@ -47,31 +47,7 @@ Before you begin, ensure you have met the following requirements:
    ```
 5. Open your browser and navigate to `http://localhost:3000`
 
-## Project Structure
-```
-uv-sunscreen-advisor/
-├── node_modules/
-├── public/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
-│   └── images/
-│       ├── logo.svg
-│       ├── sunscreen-needed.svg
-│       └── no-sunscreen.svg
-├── views/
-│   ├── partials/
-│   │   ├── header.ejs
-│   │   └── footer.ejs
-│   ├── index.ejs
-│   └── result.ejs
-├── app.js
-├── .env
-├── .env.example
-├── package.json
-└── README.md
-```
+
 
 ## How It Works
 1. The application starts by displaying a form where users can enter their latitude and longitude coordinates or use the "Use My Location" button for automatic geolocation.
