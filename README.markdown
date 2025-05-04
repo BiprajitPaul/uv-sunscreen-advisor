@@ -34,7 +34,7 @@ Before you begin, ensure you have met the following requirements:
 ## Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/uv-sunscreen-advisor.git
+   git clone https://github.com/BiprajitPaul/uv-sunscreen-advisor.git
    cd uv-sunscreen-advisor
    ```
 2. Install dependencies:
