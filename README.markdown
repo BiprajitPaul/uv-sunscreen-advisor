@@ -11,6 +11,8 @@ A web application that uses the OpenUV API to provide users with information abo
 - **Personalized Recommendations**: Provides sunscreen recommendations based on UV levels
 - **Visual Indicators**: Color-coded warnings based on UV level
 - **Responsive Design**: Works on both mobile and desktop devices
+## Future Work
+- I will add the feature of recommended sunscreen from online shpping websites , so that user can directly see the UV range and Select the best sunnscreen provided by this website.
 
 ## Screenshots
 ## Screenshots
